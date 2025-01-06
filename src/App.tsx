@@ -1,10 +1,56 @@
-import { Button } from "./components/ui/button"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import "./App.css"
+import { AppLayout } from "./layouts/AppLayout"
+import LandingPage from "./pages/LandingPage"
+import Onboarding from "./pages/Onboarding"
+import JobListing from "./pages/JobListing"
+import Job from "./pages/Job"
+import PostJob from "./pages/PostJob"
+import SavedJob from "./pages/SavedJob"
+import MyJobs from "./pages/MyJobs"
+import { ThemeProvider } from "./components/theme-provider"
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <LandingPage />
+      },
+      {
+        path: '/onboarding',
+        element: <Onboarding />
+      },
+      {
+        path: '/jobs',
+        element: <JobListing />
+      },
+      {
+        path: '/job/:id',
+        element: <Job />
+      },
+      {
+        path: '/post-job',
+        element: <PostJob />
+      },
+      {
+        path: '/saved-job',
+        element: <SavedJob />
+      },
+      {
+        path: '/my-jobs',
+        element: <MyJobs />
+      },
+    ]
+  }
+])
 
 const App = () => {
   return (
-    <div>
-      <Button variant="outline">Button</Button>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
   )
 }
 

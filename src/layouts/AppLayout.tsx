@@ -9,8 +9,8 @@ export const AppLayout = () => {
                 <Header />
                 <Outlet />
             </main>
-            <div className="p-10 text-center bg-gray-800 mt-10">
-                Soon the footer will be create
+            <div className="p-10 text-center bg-gray-950 mt-10">
+                Soon the footer will be created.
             </div>
         </div>
     )

@@ -115,3 +115,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-br
+    from-red-500
+    via-blue-900
+    to-black
+  }
+  .gradient-title {
+    @apply gradient text-transparent bg-clip-text;
+  }
+}
+
+
+/* scrollbar styling */
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+/* General Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px; /* Narrow scrollbar width */
+  height: 8px; /* Narrow scrollbar height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d2d51; /* Dark thumb color */
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fafafa; /* Lighter thumb color on hover */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Black track background */
+  border-radius: 10px; /* Rounded track edges */
+}
+
+/* Firefox Scrollbar Styling */
+* {
+  scrollbar-width: thin; /* Thin scrollbar width */
+  scrollbar-color: #2d2d51 #000000; /* Dark thumb and black track */
+}
+
